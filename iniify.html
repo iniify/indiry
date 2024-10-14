@@ -201,7 +201,7 @@
         <div class="discord-glass">
             <div class="discord-profile">
                 <!-- Discord profile picture -->
-                <img src="pfp.png" alt="Profile Picture">
+                <img src="source/pfp.png" alt="Profile Picture">
 
                 <!-- Name, badges, last seen info -->
                 <div class="discord-profile-info">
@@ -209,10 +209,10 @@
                         iniify
                         <!-- Badges -->
                         <div class="badges">
-                            <img class="badge" src="badge1.png" alt="Badge 1">
-                            <img class="badge" src="badge2.png" alt="Badge 2">
-                            <img class="badge" src="badge3.png" alt="Badge 3">
-                            <img class="badge" src="badge4.png" alt="Badge 4">
+                            <img class="badge" src="source/badge1.png" alt="Badge 1">
+                            <img class="badge" src="source/badge2.png" alt="Badge 2">
+                            <img class="badge" src="source/badge3.png" alt="Badge 3">
+                            <img class="badge" src="source/badge4.png" alt="Badge 4">
                         </div>
                     </div>
                     <div class="last-seen">last seen 13 minutes ago</div>
@@ -223,11 +223,11 @@
     </div>
 
     <!-- Music toggle button outside the main glass box -->
-    <img id="music-toggle" src="music.png" alt="Toggle Music">
+    <img id="music-toggle" src="source/music.png" alt="Toggle Music">
 
     <!-- Audio element -->
     <audio id="background-music" loop>
-        <source src="Amazing-Plan.mp3" type="audio/mp3">
+        <source src="source/Amazing-Plan.mp3" type="audio/mp3">
     </audio>
 
     <script>
@@ -242,7 +242,7 @@
             if (!isMusicPlaying) {
                 backgroundMusic.play();
                 isMusicPlaying = true;
-                musicToggle.src = 'music.png'; // Change to "music.png" when playing
+                musicToggle.src = 'source/music.png'; // Change to "music.png" when playing
             }
         }, { once: true });
 
@@ -251,10 +251,10 @@
             event.stopPropagation(); // Prevent the body event from firing
             if (isMusicPlaying) {
                 backgroundMusic.pause();
-                musicToggle.src = 'nomusic.png';  // Change to 'nomusic.png'
+                musicToggle.src = 'source/nomusic.png';  // Change to 'nomusic.png'
             } else {
                 backgroundMusic.play();
-                musicToggle.src = 'nomusic.png';  // Change to 'music.png'
+                musicToggle.src = 'source/nomusic.png';  // Change to 'music.png'
             }
             isMusicPlaying = !isMusicPlaying;
         });
