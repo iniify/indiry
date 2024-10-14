@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indiry.eu</title>
+</head>
+<body>
+    <h1>Stránka s přesměrováním</h1>
+    <button onclick="redirect()">Přejdi na /iniify</button>
+
+    <script>
+        function redirect() {
+            // Zkontroluje, zda URL už neobsahuje /iniify
+            if (!window.location.href.includes('/iniify.html')) {
+                window.location.href = window.location.href + '/iniify.html';
+            }
+        }
+    </script>
+</body>
+</html>

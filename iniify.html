@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indiry.eu</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Video background styling */
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Main glassmorphism box */
+        .glass-effect {
+            background: rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8.2px);
+            -webkit-backdrop-filter: blur(8.2px);
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            width: 700px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            color: white;
+            position: relative;
+        }
+
+        /* Profile section inside the main glass box */
+        .profile {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .profile-name {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Discord-style glassmorphism box inside the main glass box */
+        .discord-glass {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 90%;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .discord-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .discord-profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .discord-profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .discord-profile-info .name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .discord-profile-info .name .badges {
+            display: flex;
+            margin-left: 10px;
+        }
+
+        .discord-profile-info .name .badge {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .discord-profile-info .last-seen {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-top: 5px;
+        }
+
+        /* Centered section for social icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 200px;
+            width: 100%;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        /* Music toggle button */
+        #music-toggle {
+            position: fixed; /* Change to fixed to place it outside of the box */
+            bottom: 20px; /* Adjusted further down */
+            left: 20px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video background -->
+    <video id="video-background" autoplay loop muted>
+        <source src="background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main glassmorphism box -->
+    <div class="glass-effect">
+        <!-- Profile picture and name in top-left corner -->
+        <div class="profile">
+            <img src="pfp.png" alt="Profile Picture">
+            <div class="profile-name">iniify</div>
+        </div>
+
+        <!-- Centered section for social icons -->
+        <div class="social-icons">
+            <a href="https://github.com/iniify" target="_blank">
+                <img src="github.png" alt="GitHub">
+            </a>
+            <a href="https://discord.gg/hChmPZsytv" target="_blank">
+                <img src="discord.png" alt="Discord">
+            </a>
+            <a href="https://www.youtube.com/@iniify006" target="_blank">
+                <img src="youtube.png" alt="YouTube">
+            </a>
+            <a href="https://www.tiktok.com/@iniify006" target="_blank">
+                <img src="tiktok.png" alt="TikTok">
+            </a>
+            <a href="https://www.reddit.com/r/iniify/" target="_blank">
+                <img src="reddit.png" alt="Reddit">
+            </a>
+            <a href="https://www.twitch.tv/iniify06" target="_blank">
+                <img src="twitch.png" alt="twitch">
+            </a>
+            <a href="https://www.instagram.com/iniify06/" target="_blank">
+                <img src="instagram.png" alt="instagram">
+            </a>
+        </div>
+
+        <!-- Discord-style glassmorphism box inside the main box -->
+        <div class="discord-glass">
+            <div class="discord-profile">
+                <!-- Discord profile picture -->
+                <img src="pfp.png" alt="Profile Picture">
+
+                <!-- Name, badges, last seen info -->
+                <div class="discord-profile-info">
+                    <div class="name">
+                        iniify
+                        <!-- Badges -->
+                        <div class="badges">
+                            <img class="badge" src="badge1.png" alt="Badge 1">
+                            <img class="badge" src="badge2.png" alt="Badge 2">
+                            <img class="badge" src="badge3.png" alt="Badge 3">
+                            <img class="badge" src="badge4.png" alt="Badge 4">
+                        </div>
+                    </div>
+                    <div class="last-seen">last seen 13 minutes ago</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Music toggle button outside the main glass box -->
+    <img id="music-toggle" src="music.png" alt="Toggle Music">
+
+    <!-- Audio element -->
+    <audio id="background-music" loop>
+        <source src="Amazing-Plan.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        const musicToggle = document.getElementById('music-toggle');
+        const backgroundMusic = document.getElementById('background-music');
+
+        // Set initial state
+        let isMusicPlaying = false;
+
+        // Play music when the page is first clicked to allow autoplay
+        document.body.addEventListener('click', () => {
+            if (!isMusicPlaying) {
+                backgroundMusic.play();
+                isMusicPlaying = true;
+                musicToggle.src = 'music.png'; // Change to "music.png" when playing
+            }
+        }, { once: true });
+
+        // Function to toggle music
+        musicToggle.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent the body event from firing
+            if (isMusicPlaying) {
+                backgroundMusic.pause();
+                musicToggle.src = 'nomusic.png';  // Change to 'nomusic.png'
+            } else {
+                backgroundMusic.play();
+                musicToggle.src = 'nomusic.png';  // Change to 'music.png'
+            }
+            isMusicPlaying = !isMusicPlaying;
+        });
+    </script>
+
+</body>
+</html>
