@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rules</title>
+    <title>Rules with Expandable Sections</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,6 +54,7 @@
             margin-bottom: 10px;
             border-radius: 5px;
             border-left: 5px solid #007bff;
+            cursor: pointer;
         }
 
         .rule-title {
@@ -61,9 +62,13 @@
         }
 
         .rule-content {
-            margin-top: 5px;
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
         }
-
     </style>
 </head>
 <body>
@@ -77,27 +82,58 @@
         </div>
 
         <div class="rules">
-            <div class="rule">
+            <div class="rule" onclick="toggleRuleContent('rule1')">
                 <span class="rule-title">1.1. You must be at least 13 years old to be on Discord</span>
+                <div id="rule1" class="rule-content">
+                    <p>You must meet the minimum age requirement for Discord within your country. Claiming to be younger, even as a joke, will result in a ban.</p>
+                </div>
             </div>
-            <div class="rule">
+            <div class="rule" onclick="toggleRuleContent('rule2')">
                 <span class="rule-title">1.2. Do not use self-bots, nitro snipers, auto changing statuses, API exploits, or do anything that harms Discord’s servers</span>
+                <div id="rule2" class="rule-content">
+                    <p>If we see that you are doing one of these, you will be banned for violating Discord's Terms of Service.</p>
+                </div>
             </div>
-            <div class="rule">
+            <div class="rule" onclick="toggleRuleContent('rule3')">
                 <span class="rule-title">1.3. Do not engage or joke about organizing raids, doxxes, or swatting</span>
+                <div id="rule3" class="rule-content">
+                    <p>Any threat or joke about raiding, doxxing, or swatting someone will result in a permanent ban.</p>
+                </div>
             </div>
-            <div class="rule">
+            <div class="rule" onclick="toggleRuleContent('rule4')">
                 <span class="rule-title">1.4. Do not use Discord to scam or send malware / viruses / malicious links</span>
+                <div id="rule4" class="rule-content">
+                    <p>Sending viruses or malware goes against Discord's Terms of Service, and we will ban you if we find out you have sent or participated in them.</p>
+                </div>
             </div>
-            <div class="rule">
+            <div class="rule" onclick="toggleRuleContent('rule5')">
                 <span class="rule-title">1.5. Do not leak private information</span>
+                <div id="rule5" class="rule-content">
+                    <p>We do not allow any identifiable information to be sent to the server. Giving out fake information as a joke may also result in a ban.</p>
+                </div>
             </div>
-            <div class="rule">
+            <div class="rule" onclick="toggleRuleContent('rule6')">
                 <span class="rule-title">1.6. No Recording of Voice Channels</span>
+                <div id="rule6" class="rule-content">
+                    <p>Recording VCs without consent is frowned upon in the server, therefore we do not allow it. Consent is needed from everyone in the VC.</p>
+                </div>
             </div>
         </div>
     </div>
 
+    <script>
+        function toggleRuleContent(ruleId) {
+            var content = document.getElementById(ruleId);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
+</html>
+
 </html>
 
